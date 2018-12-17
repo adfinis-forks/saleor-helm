@@ -88,11 +88,17 @@ saleor:
         backOffLimit:
         ttlSecondsAfterFinished:
         weight: 5
-      nginx:
+      translations:
+        enabled: true
         activeDeadlineSeconds:
         backOffLimit:
         ttlSecondsAfterFinished:
         weight: 6
+      nginx:
+        activeDeadlineSeconds:
+        backOffLimit:
+        ttlSecondsAfterFinished:
+        weight: 7
     cron:
       currencyUpdates:
         enabled: true

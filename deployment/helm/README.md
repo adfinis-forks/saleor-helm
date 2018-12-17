@@ -210,12 +210,13 @@ Parent Chart (saleor):
 │   │   ├── currency-update-cronjob.yaml
 │   │   └── vat-update-cronjob.yaml
 │   └── jobs
-│       ├── 01_db-migrate-job.yaml
-│       ├── 02_db-populate-demo-job.yaml
-│       ├── 03_db-create-users-job.yaml
-│       ├── 04_currency-update-job.yaml
-│       ├── 05_vat-update-job.yaml
-│       └── 06_nginx-job.yaml
+│       ├── 01-db-migrate-job.yaml
+│       ├── 02-db-populate-demo-job.yaml
+│       ├── 03-db-create-users-job.yaml
+│       ├── 04-currency-update-job.yaml
+│       ├── 05-vat-update-job.yaml
+│       └── 06-translations-job.yaml
+│       └── 07-nginx-job.yaml
 ├── ingress.yaml
 ├── nginx-deployment.yaml
 ├── nginx-hpa.yaml
@@ -239,12 +240,13 @@ Parent Chart (saleor):
 | `_helpers.tpl`                  | Helper templates designed to reduce code replication (DRY) |
 | `currency-update-cronjob.yaml`  | A cronjob for updating the currency rates periodically |
 | `vat-update-cronjob.yaml`       | A cronjob for updating the vat rates periodically |
-| `01_db-migrate-job.yaml`        | Executes saleor database migrations |
-| `02_db-populate-demo-job.yaml`  | Executes saleor database population and media file creation for the demo storefront |
-| `03_db-create-users-job.yaml`   | Executes saleor database population with predefined users |
-| `04_currency-update-job.yaml`   | Inserts the currency rates |
-| `05_vat-update-job.yaml`        | Inserts the vat rates |
-| `06_nginx-job.yaml`             | Prepares nginx pod if nginx as a server is enabled |
+| `01-db-migrate-job.yaml`        | Executes saleor database migrations |
+| `02-db-populate-demo-job.yaml`  | Executes saleor database population and media file creation for the demo storefront |
+| `03-db-create-users-job.yaml`   | Executes saleor database population with predefined users |
+| `04-currency-update-job.yaml`   | Inserts the currency rates |
+| `05-vat-update-job.yaml`        | Inserts the vat rates |
+| `06-translations-job.yaml`      | Compiles the translations |
+| `07-nginx-job.yaml`             | Prepares nginx pod if nginx as a server is enabled |
 | `ingress.yaml`                  | Defines how to handle incoming traffic to the service |
 | `nginx-deployment.yaml`         | Deploys pod(s) for the nginx server. Handles serving static and media assets |
 | `nginx-hpa.yaml`                | Horizontal pod autoscaling for the nginx pods |
