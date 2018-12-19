@@ -24,7 +24,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 {{- end -}}
 
-{{- define "postgresql-fullname" -}}
+{{- define "postgresql.fullname" -}}
 {{- if .Values.postgresql.fullnameOverride -}}
 {{- .Values.postgresql.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -37,7 +37,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 {{- end -}}
 
-{{- define "redis-fullname" -}}
+{{- define "redis.fullname" -}}
 {{- if .Values.redis.fullnameOverride -}}
 {{- .Values.redis.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -49,6 +49,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 {{- end -}}
 {{- end -}}
+
 
 {{- define "smtp.fullname" -}}
 {{- printf "%s-%s" .Release.Name "smtp" | trunc 63 | trimSuffix "-" -}}
@@ -78,11 +79,11 @@ env:
     {{- if .Values.postgresql.existingSecret }}
       name: {{ .Values.postgresql.existingSecret }}
     {{- else }}
-      name: {{ template "postgresql-fullname" . }}
+      name: {{ template "postgresql.fullname" . }}
     {{- end }}
       key: postgresql-password
 - name: SENTRY_POSTGRES_HOST
-  value: {{ template "postgresql-fullname" . }}
+  value: {{ template "postgresql.fullname" . }}
 - name: SENTRY_POSTGRES_PORT
   value: "5432"
 - name: SENTRY_REDIS_PASSWORD
@@ -91,11 +92,11 @@ env:
     {{- if .Values.redis.existingSecret }}
       name: {{ .Values.redis.existingSecret }}
     {{- else }}
-      name: {{ template "redis-fullname" . }}
+      name: {{ template "redis.fullname" . }}
     {{- end }}
       key: redis-password
 - name: SENTRY_REDIS_HOST
-  value: {{ template "redis-fullname" . }}-master
+  value: {{ template "redis.fullname" . }}-master
 - name: SENTRY_REDIS_PORT
   value: {{ default "6379" .Values.redis.master.port | quote }}
 - name: SENTRY_EMAIL_HOST

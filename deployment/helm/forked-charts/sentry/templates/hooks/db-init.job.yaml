@@ -52,11 +52,11 @@ spec:
 
           while [[ "$(is_pg_ready)" != *"accepting connections"* ]]; do
             echo "response from server: $(is_pg_ready)";
-            echo "waiting for {{ template "postgresql-fullname" . }} service" && sleep 5s;
+            echo "waiting for {{ template "postgresql.fullname" . }} service" && sleep 5s;
           done
 
           echo -n "$(is_pg_ready)";
-          echo "{{ template "postgresql-fullname" . }} is ready";
+          echo "{{ template "postgresql.fullname" . }} is ready";
 {{- include "sentry.standardEnv" . | indent 8 }}
       containers:
       - name: db-init-job
