@@ -94,6 +94,9 @@ data:
   smtp-password:
   user-password:
   private-key:
+  braintree-private-key:
+  razorpay-secret-key:
+  stripe-secret-key:
 ```
 
 ***Step 2:***
@@ -629,7 +632,11 @@ In order for the saleor deployment to function properly, the following secrets s
 | `aws-access-key-secret`            | Saleor/saleor                 | The aws access key secret, required if serving content via s3 (TODO)   |  :x:                        |
 | `ext-redis-pass`                   | Saleor/saleor                 | The password for an external redis database                            |  :x:                        |
 | `ext-postgresql-pass`              | Saleor/saleor                 | The password for an external redis database                            |  :x:                        |
-| `ext-elasticsearch-pass`           | Saleor/saleor                 | The password for an external elasticsearch database                    |  :x:                |
+| `ext-elasticsearch-pass`           | Saleor/saleor                 | The password for an external elasticsearch database                    |  :x:                        |
+| `braintree-private-key`            | Saleor/saleor                 | The private key for braintree payments integration                     |  :x:                        |
+| `razorpay-secret-key`              | Saleor/saleor                 | The secret key for razorpay payments integration                       |  :x:                        |
+| `stripe-secret-key`                | Saleor/saleor                 | The secret key for stripe payments integration                         |  :x:                        |
+
 
 ## Chart Repository
 <div>
