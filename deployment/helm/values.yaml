@@ -5,7 +5,7 @@
 saleor:
   image:
     repository: smoloney/saleor
-    tag: "master-d615eb5b0"
+    tag: "master-f1526e233"
     pullPolicy: IfNotPresent
     # pullSecret:
 
@@ -141,7 +141,7 @@ saleor:
     mediaUrl: /media/
     enableSilk: false
     defaultCountry: IE
-    defaultCurrency: USD
+    defaultCurrency: EUR
     availableCurrencies:
       - AUD
       - CAD
